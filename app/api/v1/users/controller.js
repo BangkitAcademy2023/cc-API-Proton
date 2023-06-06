@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const {UnauthenticatedError} = require('../../../errors')
 const {querySemuaUser} = require("../../../services/products.service")
 const {getUser} = require("../../../services/users.service");
-
+const jwt = require('jsonwebtoken')
 
 
 const getAllUser = async (req, res, next) =>{
@@ -27,4 +27,15 @@ const createUser = async (req, res, next) => {
 	}
 };
 
-module.exports = { getAllUser, createUser };
+const posts = [
+	{
+		username: 'miya',
+		title: 'post 1',
+	},
+	{
+		username: 'yogi',
+		title: 'post 2',
+	}
+]
+
+module.exports = { getAllUser, createUser, posts };
