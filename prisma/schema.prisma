@@ -36,13 +36,27 @@ model VerificationToken {
 
 model Product {
     id              Int      @id @default(autoincrement())
+    kodeProduk      String
     jumlahProduk    Int
     namaProduk      String
     kategori        String
     tipe            String
     harga           Int
     hargaJual       Int
+    jumlahTerjual   Int
     expiredDate     DateTime
     createdAt       DateTime @default(now())
     updatedAt       DateTime @updatedAt
+    store Store[]
+}
+
+model Store {
+    id              Int      @id @default(autoincrement())
+    namaToko        String
+    alamat          String
+    telepon         String
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+    productId       Int
+    product         Product     @relation(fields: [productId], references: [id])
 }

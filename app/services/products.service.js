@@ -6,19 +6,19 @@ async function getProducts(){
 }
 
 async function createProductService(req){
-    const {jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate} = req.body
+    const {kodeProduk, jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate, jumlahTerjual} = req.body
     const product = await prisma.product.create({
-        data:{cjumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate}
+        data:{kodeProduk, jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate, jumlahTerjual}
     })
     return product;
 }
 
 async function updateProductService(req){
-    const {jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate} = req.body
+    const {kodeProduk, jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate, jumlahTerjual} = req.body
     const {id} = req.params
     const product = await prisma.product.update({
         where:{id:parseInt(id)},
-        data:{cjumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate}
+        data:{kodeProduk, jumlahProduk, namaProduk, kategori, tipe, harga, hargaJual, expiredDate, jumlahTerjual}
     })
     return product;
 }

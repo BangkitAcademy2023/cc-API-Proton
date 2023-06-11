@@ -10,7 +10,9 @@ DROP TABLE IF EXISTS `Category`;
 -- CreateTable
 CREATE TABLE `Product` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `kodeProduk` INTEGER NOT NULL,
     `jumlahProduk` INTEGER NOT NULL,
+    `jumlahTerjual` INTEGER NOT NULL,
     `namaProduk` VARCHAR(191) NOT NULL,
     `kategori` VARCHAR(191) NOT NULL,
     `tipe` VARCHAR(191) NOT NULL,

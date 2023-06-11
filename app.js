@@ -7,6 +7,7 @@ const logger = require("morgan");
 const imagesRouter = require("./app/api/v1/images/router");
 const usersRouter = require("./app/api/v1/users/router");
 const productRouter = require("./app/api/v1/product/router");
+const storeRouter = require("./app/api/v1/store/router")
 const authRouter = require("./app/api/v1/auth/router");
 
 //middlewares
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 app.use(`${v1}/images`, imagesRouter);
 app.use(`${v1}`, usersRouter);
 app.use(`${v1}`, productRouter);
+app.use(`${v1}`, storeRouter);
 app.use(`${v1}`, authRouter);
 
 app.use(NotFoundMiddleware);
