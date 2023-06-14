@@ -1,0 +1,12 @@
+runtime: nodejs18
+
+runtime_config:
+  env: flex
+
+env_variables:
+  DATABASE_URL: "mysql://root:12345678@34.101.158.227:3306/proton-sql"
+  ACCESS_TOKEN_SECRET: 9c982d49f388d9b185eb912627befca35143574249d706bb2cdb992cb4d8254ed6d1a140fae5cea9951d906134d40f994a1cb743a35fd52c3e4b2a83ed6cb482
+  REFRESH_TOKEN_SECRET: b74516a6f8b98c069a65effb9e761136ba42ccb3c9a9f96739124e22ce031cb6616ff2f329c3bdad45a0fcbeb0d425a90e0c03f5a9bde549c22de462f50c619f
+
+beta_settings:
+  cloud_sql_instances: "proton-387902:asia-southeast2:proton-sql"
