@@ -1,10 +1,11 @@
-const { getAllProducts, createProducts, updateProducts, deleteProducts } = require("./controller");
+const { getAllProducts, getProductDetails, createProducts, updateProducts, deleteProducts } = require("./controller");
 
 const router = require("express").Router();
 
 const { authenticateUser } = require("../../../middlewares/auth");
 
 router.get("/product", getAllProducts)
+router.get("/product/:productId", getProductDetails);
 router.post("/product", createProducts);
 router.put("/product/:id", updateProducts);
 router.delete("/product/:id", deleteProducts);
